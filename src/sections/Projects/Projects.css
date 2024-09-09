@@ -1,0 +1,47 @@
+.projects{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-text{
+    font-size: calc(17vw + 1.5rem);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.mask span{
+    font-size: .1rem;
+    text-transform:capitalize;
+    font-family: var(--font-secundary);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    color: #fff;
+}
+
+.hidden-background{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.mask{
+    width: 5rem;
+    height: 5rem;
+    background-color: #000;
+    border-radius: 50%;
+}

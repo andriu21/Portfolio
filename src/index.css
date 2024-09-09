@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+
+:root{
+    --black :#000000;
+    --white :#FFFFFF;
+    --font : "Raleway", sans-serif;
+    --font-secundary : "Playwrite CU", cursive;
+    --font-deck : "Fascinate Inline", system-ui;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    resize: none;
+    outline: none;
+    list-style: none;
+}
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    font-family: var(--font);
+}
+
+
+html{
+    font-size: 65.7%;
+}
+
+html::-webkit-scrollbar{
+    overflow: hidden;
+}
+
+
+
+
+@media (max-width:1200px) {
+    
+}
+
+
+@media (max-width:900px) {
+    html{
+        font-size: 55.0%;
+    }
+    
+    
+}
+
+@media (max-width:720px) {
+    
+}
+
+@media (max-width:520px) {
+    
+}
+
+@media (max-width:475px) {
+    html{
+        font-size: 50%;
+    }
+    
+    
+}
+
+@media (max-width:395px) {
+    
+}

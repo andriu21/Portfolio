@@ -1,0 +1,46 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: .4rem 3%;
+    z-index: 900;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+}
+
+.header_logo{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.header_title{
+    font-size: 2rem;
+    font-family: var(--font-secundary);
+}
+
+.header_btn-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .7rem;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.menu_line{
+    font-size: 3rem;
+}
+
