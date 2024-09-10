@@ -167,7 +167,7 @@ export const About = () => {
              <span> Enterprize Projects and Skill Acquisition Hands-On Learning</span>: I
               believe the best way to learn is by doing. I embarked on creating
               various enterprize and personal projects that allowed me to apply new concepts
-              and techniques. <span>Frontend Projects</span>:Worpress,React,Tailwing,etcs  <span>Backend Projects</span>: Built robust server-side
+              and techniques. Frontend Projects:Worpress,React,Tailwing,etcs  Backend Projects: Built robust server-side
               applications with Python ,Sql and Mongodb 
             </p>
           </div>

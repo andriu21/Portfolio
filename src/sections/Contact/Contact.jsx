@@ -100,6 +100,33 @@ export const Contact = () => {
       });;
   });
 
+
+  const [result, setResult] = useState("");
+
+ 
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", '516fde5a-d9f6-4994-a028-572781aa7162');
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
     <>
       <section className="contact" id="contact">
@@ -120,13 +147,14 @@ export const Contact = () => {
             <h2 className="title">CONTACTME</h2>
             <p className="subtitle">working together</p>
           </div>
-          <form action="" className="form">
+          <form onSubmit={onSubmit} className="form">
             <div className="form_container_input form_container_input-uno">
               <input
                 type="email"
                 name="email"
                 id="email"
                 className="form_input"
+                required
               />
               <label htmlFor="email">email</label>
             </div>
@@ -136,10 +164,11 @@ export const Contact = () => {
                 id="message"
                 maxLength={70}
                 className="form_input form-textarea"
+                required
               ></textarea>
               <label htmlFor="message">message</label>
             </div>
-            <button className="btn">contact Me</button>
+            <button className="btn" type="submit">contact Me</button>
           </form>
 
           <div className="footer_false">
