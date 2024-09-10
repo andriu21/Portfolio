@@ -48,7 +48,7 @@ export const Header = () => {
         </div>
         <div className="cv">
           <a
-            href="/AndriuGudinoEnglish.pdf"
+            href="https://drive.google.com/file/d/1S4VG1v3QjWMegzxEhppB6EmlSL1HTFvt/view?usp=drive_link"
             target="_black"
             className="continue-application"
           >
