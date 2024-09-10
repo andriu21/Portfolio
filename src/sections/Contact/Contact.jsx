@@ -147,7 +147,7 @@ export const Contact = () => {
             <h2 className="title">CONTACTME</h2>
             <p className="subtitle">working together</p>
           </div>
-          <form onSubmit={onSubmit} className="form">
+          <form onSubmit={onSubmit} className="form" autoComplete={false}>
             <div className="form_container_input form_container_input-uno">
               <input
                 type="email"
