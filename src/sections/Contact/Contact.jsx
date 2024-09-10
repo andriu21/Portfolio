@@ -49,7 +49,7 @@ export const Contact = () => {
       scrollTrigger: {
         trigger: ".contact",
         start: "top top",
-        end: "800% 0",
+        end: "400% 0",
         scrub: 1,
         pin: true,
       },
