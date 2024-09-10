@@ -48,7 +48,7 @@ export const Header = () => {
         </div>
         <div className="cv">
           <a
-            href="AndriuGudinoEnglish.pdf"
+            href="/AndriuGudinoEnglish.pdf"
             target="_black"
             className="continue-application"
           >
