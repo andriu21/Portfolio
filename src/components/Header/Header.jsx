@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import Logo from "../../assets/image/logo.png";
+import Logo from "../../assets/image/logo.webp";
 import "../Header/Header.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

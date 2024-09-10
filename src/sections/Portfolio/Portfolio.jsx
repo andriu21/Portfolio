@@ -2,11 +2,11 @@ import "../Portfolio/Portfolio.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image1 from "../../assets/image/page-1.png";
-import Image2 from "../../assets/image/page-2.png";
-import Image3 from "../../assets/image/page-3.png";
-import Image4 from "../../assets/image/page-4.png";
-import Image5 from "../../assets/image/page-5.png";
+import Image1 from "../../assets/image/page-1.webp";
+import Image2 from "../../assets/image/page-2.webp";
+import Image3 from "../../assets/image/page-3.webp";
+import Image4 from "../../assets/image/page-4.webp";
+import Image5 from "../../assets/image/page-5.webp";
 import { useEffect } from "react";
 import { FaGithubAlt } from "react-icons/fa6";
 

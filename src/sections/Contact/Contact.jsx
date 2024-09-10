@@ -1,6 +1,6 @@
 import "../Contact/Contact.css";
 import contactVideo from "../../assets/videos/contact.mp4";
-import contactImage from "../../assets/image/contact-img.jpg";
+import contactImage from "../../assets/image/contact-img.webp";
 import { GoPaperAirplane } from "react-icons/go";
 import { IoCheckmarkDone } from "react-icons/io5";
 import gsap from "gsap";
