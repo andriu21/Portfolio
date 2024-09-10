@@ -19,6 +19,7 @@
     resize: none;
     outline: none;
     list-style: none;
+
 }
 
 body{
@@ -35,6 +36,10 @@ html{
 
 html::-webkit-scrollbar{
     overflow: hidden;
+}
+
+section{
+    overflow-x:hidden ;
 }
 
 
