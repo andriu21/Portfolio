@@ -4,7 +4,7 @@ import contactImage from "../../assets/image/contact-img.jpg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Contact = () => {
