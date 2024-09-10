@@ -1,14 +1,43 @@
 import "../Contact/Contact.css";
 import contactVideo from "../../assets/videos/contact.mp4";
 import contactImage from "../../assets/image/contact-img.jpg";
+import { GoPaperAirplane } from "react-icons/go";
+import { IoCheckmarkDone } from "react-icons/io5";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect ,useState} from "react";
+import { useEffect, useRef, useState } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Contact = () => {
+  const tlBtn = useRef();
   useGSAP(() => {
+
+    gsap.set('.btn',{
+      background:'transparent',
+      color:'#000'
+    })
+    tlBtn.current = gsap.timeline({ paused: true })
+    .to('.btn',{
+      x:1200,
+      duration:1,
+      ease:"bounce"
+    })
+    .to(".btn", {
+      background:'transparent',
+      duration:.5
+    })
+    .to('.btn',{
+      x:0,
+      duration:.5,
+      ease:"bounce"
+    }).to('.btn',{
+      color:'#fff',
+      background:'#000',
+      duration:.5,
+      ease:"bounce"
+    });
+
     gsap.set(".container_contact_video", {
       clipPath: "inset(0 100% 0 0)",
     });
@@ -62,7 +91,7 @@ export const Contact = () => {
       .to(".contact_img", {
         clipPath: "inset(0 0 0 0)",
         duration: 1,
-        delay:-.2
+        delay: -0.2,
       })
       .to(".footer_false", {
         scale: 1,
@@ -76,41 +105,47 @@ export const Contact = () => {
       .to(".subtitle", {
         x: 0,
         duration: 1,
-        delay:-.5
+        delay: -0.5,
       })
       .to(".form_container_input-uno", {
         clipPath: "inset(0 0 -30% 0)",
-        duration:1
+        duration: 1,
       })
       .to(".form_container_input-dos", {
         clipPath: "inset(0 0 -30% 0)",
-        duration:1
-      }).to("label", {
+        duration: 1,
+      })
+      .to("label", {
         x: 0,
         opacity: 1,
-        duration:1
-      }).to(".btn", {
+        duration: 1,
+      })
+      .to(".btn", {
         scale: 1,
         y: 0,
-        duration:1,
-        delay:-1,
-        onComplete:()=>{
-          document.querySelector('.scrollDown').style.display = 'none'
-        }
-      });;
+        duration: 1,
+        delay: -1,
+        onComplete: () => {
+          document.querySelector(".scrollDown").style.display = "none";
+        },
+      });
   });
 
+  const [result, setResult] = useState(false);
 
-  const [result, setResult] = useState("");
-
- 
+  useEffect(()=>{
+    result ? tlBtn.current.play() : tlBtn.current.reverse();
+    setTimeout(()=>{
+      setResult(false)
+    },10000)
+  },[result])
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", '516fde5a-d9f6-4994-a028-572781aa7162');
+    formData.append("access_key", "516fde5a-d9f6-4994-a028-572781aa7162");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -120,11 +155,11 @@ export const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
+      setResult(true);
       event.target.reset();
     } else {
       console.log("Error", data);
-      setResult(data.message);
+      setResult(false);
     }
   };
   return (
@@ -147,7 +182,7 @@ export const Contact = () => {
             <h2 className="title">CONTACTME</h2>
             <p className="subtitle">working together</p>
           </div>
-          <form onSubmit={onSubmit} className="form" autoComplete={false}>
+          <form onSubmit={onSubmit} className="form" >
             <div className="form_container_input form_container_input-uno">
               <input
                 type="email"
@@ -155,6 +190,7 @@ export const Contact = () => {
                 id="email"
                 className="form_input"
                 required
+                autoComplete={'off'}
               />
               <label htmlFor="email">email</label>
             </div>
@@ -165,10 +201,14 @@ export const Contact = () => {
                 maxLength={70}
                 className="form_input form-textarea"
                 required
+                autoComplete={'off'}
               ></textarea>
               <label htmlFor="message">message</label>
             </div>
-            <button className="btn" type="submit">contact Me</button>
+            <button className="btn" type="submit">
+              {!result ? `contact Me ` : `Thanks `}
+              {!result ? <GoPaperAirplane /> : <IoCheckmarkDone />}
+            </button>
           </form>
 
           <div className="footer_false">
