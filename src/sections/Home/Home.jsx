@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import VideoHome from "../../assets/videos/210424.mp4";
+import { ScrollDown } from "../../components/ScrollDown/ScrollDown.jsx";
 
 export const Home = () => {
   const tl = useRef();
@@ -108,6 +109,7 @@ export const Home = () => {
           </div>
         </div>
       </section>
+      <ScrollDown/>
     </>
   );
 };

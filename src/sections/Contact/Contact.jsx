@@ -93,7 +93,10 @@ export const Contact = () => {
         scale: 1,
         y: 0,
         duration:1,
-        delay:-1
+        delay:-1,
+        onComplete:()=>{
+          document.querySelector('.scrollDown').style.display = 'none'
+        }
       });;
   });
 

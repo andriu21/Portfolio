@@ -1,0 +1,14 @@
+.scrollDown{
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 1rem;
+    z-index: 100;
+}
+
+.scrollDown p{
+    color: #000;
+    font-size: 2rem;
+    text-transform: uppercase;
+    
+}
