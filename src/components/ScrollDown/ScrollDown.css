@@ -3,12 +3,22 @@
     text-align: center;
     position: fixed;
     top: 1rem;
-    z-index: 100;
+    z-index: 1;
 }
 
 .scrollDown p{
     color: #000;
     font-size: 2rem;
     text-transform: uppercase;
+    animation: translate 1.5s linear infinite alternate;
     
+}
+
+@keyframes translate {
+    0%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
 }
